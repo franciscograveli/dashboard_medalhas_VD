@@ -12,14 +12,20 @@ from plotly.subplots import make_subplots
 # ----------------------------------------------------------------- dados ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 df = pd.read_csv(os.path.join(BASE_DIR, "Country_Medals.csv"))
-df["Country_Name"] = df["Country_Name"].replace("United States", "United States of America")
+# Padroniza nomes: um mesmo país com grafias diferentes entre edições e/ou nome
+# que o mapa do Plotly reconhece.
+NAME_FIXES = {
+    "United States": "United States of America",
+    "Macedonia": "North Macedonia",
+}
+df["Country_Name"] = df["Country_Name"].replace(NAME_FIXES)
 df = df[df["Year"] >= 1992].copy()
 
 # Entidades históricas que o mapa do Plotly não reconhece
 NOT_ON_MAP = {
     "Czechoslovakia", "Yugoslavia", "Unified Team", "ROC",
     "Independent Olympic Athletes", "Independent Olympic Participants",
-    "Serbia and Montenegro",
+    "Serbia and Montenegro", "Kosovo",
 }
 missing_on_map = sorted(NOT_ON_MAP & set(df["Country_Name"]))
 
