@@ -258,7 +258,8 @@ def update_area(medals, countries):
     style(fig, title, 400)
     fig.update_xaxes(tickvals=sorted(df["Year"].unique()), showgrid=False, title=None)
     fig.update_yaxes(gridcolor=GRID, title=None)
-    fig.update_layout(legend=dict(orientation="h", y=-0.12, title=None, font_size=11))
+    fig.update_layout(margin=dict(l=10, r=34, t=48, b=10),  # folga p/ o rótulo "2020"
+                      legend=dict(orientation="h", y=-0.12, title=None, font_size=11))
     return fig
 
 
