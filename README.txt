@@ -1,7 +1,10 @@
 Dashboard Quadro de Medalhas Olímpicas (1992-2020) - Dash + Plotly Express
 
-Dupla: <nome 1> / <nome 2>
-Link do dashboard no Render: <COLE AQUI O LINK PÚBLICO>
+Dupla:
+  - Francisco Carlos de Assis Santos Junior
+  - Luan Souza Cunha
+
+Link do dashboard no Render: https://dashboard-medalhas-vd.onrender.com
 
 Executar localmente:
   pip install -r requirements.txt
@@ -11,4 +14,4 @@ Deploy no Render (Web Service):
   Build Command: pip install -r requirements.txt
   Start Command: gunicorn app:server
 
-Arquivos: app.py, requirements.txt, Country_Medals.csv
+Arquivos: app.py, assets/style.css, requirements.txt, Country_Medals.csv
