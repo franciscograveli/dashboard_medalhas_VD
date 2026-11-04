@@ -195,6 +195,7 @@ def update_kpis(medals, countries):
     else:
         sub = ranking[ranking.index.isin(countries)]
         lead = ("Líder da seleção", sub.index[0], f"{fmt(sub.iloc[0])} medalhas")
+        
     lead_el = html.Div(className="kpi", style={"--c": BLUE}, children=[
         html.Div(lead[0], className="k-label"),
         html.Div(lead[1], className="k-value",
